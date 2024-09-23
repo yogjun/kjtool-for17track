@@ -15,6 +15,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -29,7 +30,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class T6DataController {
   @RequestMapping("/info.html")
-  public String html() {
+  public String html(
+      @RequestParam(name = "waybillnumber", required = false) String waybillnumber, Model model) {
+    OrderRoutingTrackVO data = query(waybillnumber);
+    model.addAttribute("data", data);
+    model.addAttribute("events", data.getEvents());
     return "index.html";
   }
 
@@ -55,7 +60,7 @@ public class T6DataController {
       orderRoutingTrackVO.setEvents(orderRoutingTrackEventVOS);
       orderRoutingTrackVO.setDestCountry(ld.getCountrycode());
       orderRoutingTrackVO.setNumber(ld.getWaybillnumber());
-      orderRoutingTrackVO.setOriNumber(ld.getWaybillnumber());
+      orderRoutingTrackVO.setOriNumber(ld.getCustomernumber1());
       if (StrUtil.equals(ld.getStatus(), "signed")) {
         // 已签收
         orderRoutingTrackVO.setStatus("Delivered");
@@ -88,8 +93,10 @@ public class T6DataController {
     return list;
   }
 
-
   private String getValueFromElement(Elements elements) {
+    if (CollUtil.isEmpty(elements)) {
+      return "";
+    }
     return elements.get(0).text();
   }
 }

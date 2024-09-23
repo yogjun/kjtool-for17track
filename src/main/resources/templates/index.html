@@ -1,6 +1,34 @@
-<html>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Product List</title>
+</head>
 <body>
-<h1>hello word!!!</h1>
-<p>this is a html page</p>
+<h1>路由信息</h1>
+<form th:action="@{/t6/info.html}" th:method="get">
+    <input type="text" name="waybillnumber" placeholder="Search by waybillnumber" />
+    <button type="submit">Search</button>
+</form>
+<div>
+    <p>运单号: <span th:text="${data.number}">Value 1</span></p>
+    <p>客户单号: <span th:text="${data.oriNumber}">Value 2</span></p>
+    <p>目的地: <span th:text="${data.destCountry}">Value 3</span></p>
+</div>
+<table border="1">
+    <thead>
+    <tr>
+        <th>content</th>
+        <th>location</th>
+        <th>content</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="evet : ${events}">
+        <td th:text="${evet.content}">content</td>
+        <td th:text="${evet.location}">location</td>
+        <td th:text="${evet.content}">content</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
