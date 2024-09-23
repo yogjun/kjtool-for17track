@@ -29,6 +29,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/t6")
 @Controller
 public class T6DataController {
+
+  @RequestMapping("/index")
+  public String index(Model model) {
+    return "index.html";
+  }
+
   @RequestMapping("/info.html")
   public String html(
       @RequestParam(name = "waybillnumber", required = false) String waybillnumber, Model model) {
@@ -36,7 +42,7 @@ public class T6DataController {
     model.addAttribute("waybillnumber", waybillnumber);
     model.addAttribute("data", data);
     model.addAttribute("events", data.getEvents());
-    return "index.html";
+    return "events.html";
   }
 
   @RequestMapping("/query")

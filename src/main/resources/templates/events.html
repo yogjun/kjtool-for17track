@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>路由信息</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+        div {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>路由信息</h1>
+    <form th:action="@{/t6/info.html}" th:method="get">
+        <input type="text" name="waybillnumber" th:value="${waybillnumber}" placeholder="Search by waybillnumber" />
+        <button type="submit">Search</button>
+    </form>
+    <div>
+        <p>运单号: <span th:text="${data.number}">Value 1</span></p>
+        <p>客户单号: <span th:text="${data.oriNumber}">Value 2</span></p>
+        <p>目的地: <span th:text="${data.destCountry}">Value 3</span></p>
+    </div>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>内容</th>
+            <th>位置</th>
+            <th>时间</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="event : ${events}">
+            <td th:text="${event.content}">内容</td>
+            <td th:text="${event.location}">位置</td>
+            <td th:text="${event.time}">时间</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

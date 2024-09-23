@@ -1,34 +1,97 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Product List</title>
+    <title>物流公司官网</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            width: 100%;
+        }
+        header h1 {
+            text-align: center;
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        .content {
+            display: block;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-<h1>路由信息</h1>
-<form th:action="@{/t6/info.html}" th:method="get">
-    <input type="text" name="waybillnumber" th:value="${waybillnumber}" placeholder="Search by waybillnumber" />
-    <button type="submit">Search</button>
-</form>
-<div>
-    <p>运单号: <span th:text="${data.number}">Value 1</span></p>
-    <p>客户单号: <span th:text="${data.oriNumber}">Value 2</span></p>
-    <p>目的地: <span th:text="${data.destCountry}">Value 3</span></p>
+<div class="container">
+    <header>
+        <h1>物流公司</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">主页</a></li>
+                <li><a href="#services">服务</a></li>
+                <li><a href="#about">关于我们</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="home" class="content">
+        <h2>欢迎来到物流公司</h2>
+        <p>我们致力于提供最优质的物流解决方案。</p>
+    </div>
+    <div id="services" class="content">
+        <h2>我们的服务</h2>
+        <p>我们提供多种物流服务，包括国内运输、国际运输、仓储管理等。</p>
+    </div>
+    <div id="about" class="content">
+        <h2>关于物流公司</h2>
+        <p>物流公司成立于2000年，是领先的物流解决方案提供商。</p>
+    </div>
+    <div id="contact" class="content">
+        <h2>联系我们</h2>
+        <p>地址：[公司地址]</p>
+        <p>电话：[公司电话]</p>
+        <p>邮箱：[公司邮箱]</p>
+    </div>
+    <footer>
+        <p>版权所有 © 2024 物流公司</p>
+    </footer>
 </div>
-<table border="1">
-    <thead>
-    <tr>
-        <th>content</th>
-        <th>location</th>
-        <th>time</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="evet : ${events}">
-        <td th:text="${evet.content}">content</td>
-        <td th:text="${evet.location}">location</td>
-        <td th:text="${evet.time}">time</td>
-    </tr>
-    </tbody>
-</table>
 </body>
 </html>
