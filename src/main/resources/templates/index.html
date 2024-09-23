@@ -6,7 +6,7 @@
 <body>
 <h1>路由信息</h1>
 <form th:action="@{/t6/info.html}" th:method="get">
-    <input type="text" name="waybillnumber" placeholder="Search by waybillnumber" />
+    <input type="text" name="waybillnumber" th:value="${waybillnumber}" placeholder="Search by waybillnumber" />
     <button type="submit">Search</button>
 </form>
 <div>
@@ -19,14 +19,14 @@
     <tr>
         <th>content</th>
         <th>location</th>
-        <th>content</th>
+        <th>time</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="evet : ${events}">
         <td th:text="${evet.content}">content</td>
         <td th:text="${evet.location}">location</td>
-        <td th:text="${evet.content}">content</td>
+        <td th:text="${evet.time}">time</td>
     </tr>
     </tbody>
 </table>

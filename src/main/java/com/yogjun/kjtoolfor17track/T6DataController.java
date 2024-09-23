@@ -33,6 +33,7 @@ public class T6DataController {
   public String html(
       @RequestParam(name = "waybillnumber", required = false) String waybillnumber, Model model) {
     OrderRoutingTrackVO data = query(waybillnumber);
+    model.addAttribute("waybillnumber", waybillnumber);
     model.addAttribute("data", data);
     model.addAttribute("events", data.getEvents());
     return "index.html";
