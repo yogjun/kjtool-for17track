@@ -1,29 +1,33 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
-    <title>物流公司官网</title>
+    <title>玖安怡官网</title>
     <style>
         body, html {
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
+            background: linear-gradient(to right, #f4f4f4, #ccc);
         }
+
         .container {
             width: 80%;
             margin: auto;
             padding: 20px;
         }
+
         header {
             background-color: #333;
             color: white;
             padding: 20px 0;
             width: 100%;
         }
+
         header h1 {
             text-align: center;
             margin: 0;
         }
+
         nav ul {
             list-style: none;
             padding: 0;
@@ -31,30 +35,56 @@
             justify-content: center;
             margin: 20px 0;
         }
+
         nav ul li {
             margin: 0 15px;
         }
+
         nav ul li a {
             color: white;
             text-decoration: none;
             padding: 5px 10px;
+            transition: background-color 0.3s;
         }
+
         nav ul li a:hover {
             background-color: #555;
         }
+
         .content {
             display: block;
             margin-top: 20px;
             padding: 20px;
             background-color: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
         }
+
         footer {
-            background-color: #333;
+            background-color: #222;
             color: white;
             text-align: center;
             padding: 10px 0;
             margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        .about-images {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .about-images img {
+            width: 30%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .about-images img:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -66,28 +96,33 @@
             <ul>
                 <li><a href="#home">主页</a></li>
                 <li><a href="#services">服务</a></li>
-                <li><a href="#about">关于我们</a></li>
                 <li><a href="#contact">联系我们</a></li>
             </ul>
         </nav>
     </header>
     <div id="home" class="content">
-        <h2>欢迎来到物流公司</h2>
-        <p>我们致力于提供最优质的物流解决方案。</p>
+        <h2></h2>
+        <p>
+            玖安怡国际供应链是家综合性商业运营的供应链管理公司，总部设立在加拿大温哥华，在深圳、广州、厦门、郑州、加拿大温尼伯分别设有分公司，员工共计200余人，拥有海关备案的进出口权，持有中国交通部批准的无船承运经营资格(NVOCC)、加拿大航空
+            Air Canada 运输代理资格、马士基 MSK 船司账号，UPS 全球账号及 UPS 北美末端账号。
+        </p>
     </div>
     <div id="services" class="content">
         <h2>我们的服务</h2>
-        <p>我们提供多种物流服务，包括国内运输、国际运输、仓储管理等。</p>
-    </div>
-    <div id="about" class="content">
-        <h2>关于物流公司</h2>
-        <p>物流公司成立于2000年，是领先的物流解决方案提供商。</p>
+        <p>一、玖安怡国际以经营国际海运和空运业务为主，以中国到北美国际供应链服务为核心，优化物流渠道，降低运输成本，并为客户提供货物打包、仓储分拨、末端清提派等专业服务。</p>
+
+        <p>   二、2023年我司向加拿大政府成功申请批复电子烟进口资质,是全国目前唯一一家可以提供正规电子烟”税标"以及正规进口方案的物流公司。</p>
+
+        <p>  三、2024年新增加拿大电子烟保税仓服务，提供末端电子烟一件代发，解决品牌方的库存压力，降低商家采购成本，优化运输方案，提升物流专业服务!
+        </p>
     </div>
     <div id="contact" class="content">
         <h2>联系我们</h2>
-        <p>地址：[公司地址]</p>
-        <p>电话：[公司电话]</p>
-        <p>邮箱：[公司邮箱]</p>
+        <div class="about-images">
+            <img src="../1.jpg" alt="公司图片1">
+            <img src="../2.jpg" alt="公司图片2">
+            <img src="../3.jpg" alt="公司图片3">
+        </div>
     </div>
     <footer>
         <p>版权所有 © 2024 物流公司</p>
