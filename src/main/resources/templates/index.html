@@ -86,22 +86,49 @@
         .about-images img:hover {
             transform: scale(1.05);
         }
+
+        .search-box {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .search-box input[type="text"] {
+            padding: 10px;
+            width: 70%;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-box input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-box input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
 <div class="container">
     <header>
-        <h1>物流公司</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">主页</a></li>
-                <li><a href="#services">服务</a></li>
-                <li><a href="#contact">联系我们</a></li>
-            </ul>
-        </nav>
+        <h1>玖安怡国际供应链</h1>
     </header>
+    <div class="search-box content">
+        <h2>物流查询</h2>
+        <form action="/t6/info.html" method="get">
+            <input type="text" name="waybillnumber" placeholder="请输入查询内容">
+            <input type="submit" value="搜索">
+        </form>
+    </div>
     <div id="home" class="content">
-        <h2></h2>
+        <h2>关于我们</h2>
         <p>
             玖安怡国际供应链是家综合性商业运营的供应链管理公司，总部设立在加拿大温哥华，在深圳、广州、厦门、郑州、加拿大温尼伯分别设有分公司，员工共计200余人，拥有海关备案的进出口权，持有中国交通部批准的无船承运经营资格(NVOCC)、加拿大航空
             Air Canada 运输代理资格、马士基 MSK 船司账号，UPS 全球账号及 UPS 北美末端账号。
