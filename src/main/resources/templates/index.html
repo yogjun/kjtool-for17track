@@ -69,6 +69,18 @@
             font-size: 0.9rem;
         }
 
+        footer a {
+            color: #aaa; /* 更浅的字体颜色，以区别于其他文本 */
+            text-decoration: none; /* 去除下划线 */
+            font-size: 0.8rem; /* 缩小字体大小 */
+            transition: color 0.3s; /* 颜色变化的过渡效果 */
+        }
+
+        footer a:hover {
+            color: #fff; /* 鼠标悬停时字体颜色变亮 */
+            text-decoration: underline; /* 鼠标悬停时添加下划线 */
+        }
+
         .about-images {
             display: flex;
             justify-content: space-around;
@@ -152,7 +164,7 @@
         </div>
     </div>
     <footer>
-        <p>版权所有 © 2024 物流公司</p>
+        <a href="https://beian.mps.gov.cn/#/" target="_blank">闽ICP备2021011608号-2 玖安怡(厦门)科技有限公司 版权所有</a>
     </footer>
 </div>
 </body>

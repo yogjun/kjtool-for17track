@@ -78,7 +78,6 @@
                 <version>${spring-boot.version}</version>
                 <configuration>
                     <mainClass>com.yogjun.kjtoolfor17track.KjtoolFor17trackApplication</mainClass>
-                    <skip>true</skip>
                 </configuration>
                 <executions>
                     <execution>
@@ -89,6 +88,20 @@
                     </execution>
                 </executions>
             </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-jar-plugin</artifactId>-->
+<!--                <version>3.2.0</version> &lt;!&ndash; 使用适当的版本号 &ndash;&gt;-->
+<!--                <configuration>-->
+<!--                    <archive>-->
+<!--                        <manifest>-->
+<!--                            <addClasspath>true</addClasspath>-->
+<!--                            <classpathPrefix>lib/</classpathPrefix> &lt;!&ndash; 如果需要，指定类路径前缀 &ndash;&gt;-->
+<!--                            <mainClass>your.main.Class</mainClass> &lt;!&ndash; 替换为你的主类的全名 &ndash;&gt;-->
+<!--                        </manifest>-->
+<!--                    </archive>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 
