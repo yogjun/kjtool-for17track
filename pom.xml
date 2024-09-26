@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.yogjun</groupId>
     <artifactId>kjtool-for17track</artifactId>
-    <version>0.0.2.RELEASE</version>
+    <version>0.0.3.RELEASE</version>
     <name>kjtool-for17track</name>
     <description>kjtool-for17track</description>
     <properties>
