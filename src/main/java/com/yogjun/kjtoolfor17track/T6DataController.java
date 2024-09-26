@@ -49,7 +49,7 @@ public class T6DataController {
   @ResponseBody
   public OrderRoutingTrackVO query(
       @RequestParam(name = "waybillnumber", defaultValue = "") String waybillnumber) {
-    String url = "http://www.jiuay.com/trackList";
+    String url = "http://www.jaytrans.com/trackList";
     HashMap<String, Object> map = new HashMap<>();
     map.put("page", 1);
     map.put("limit", 10);
@@ -78,7 +78,7 @@ public class T6DataController {
   }
 
   private List<OrderRoutingTrackEventVO> findItem(Integer orderpkid, String waybillnumber) {
-    String url = "http://www.jiuay.com/trackItem";
+    String url = "http://www.jaytrans.com/trackItem";
     HashMap<String, Object> map = new HashMap<>();
     map.put("orderpkid", orderpkid);
     map.put("waybillnumber", waybillnumber);
